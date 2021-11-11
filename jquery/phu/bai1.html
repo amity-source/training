@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>bai 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- register form inside table -->
+  <form class="regForm" action="index.html">
+    <table>
+      <!-- name -->
+      <tr>
+        <td>
+          <label for="username">Tên đăng nhập</label>
+        </td>
+        <td>
+          <input type="text" name="username" value="">
+        </td>
+      </tr>
+      <!-- password -->
+      <tr>
+        <td>
+          <label for="password">Mật khẩu:</label>
+        </td>
+        <td>
+          <input type="password" name="password" value="">
+        </td>
+      </tr>
+      <!-- retype-password -->
+      <tr>
+        <td>
+          <label for="retype-password">Nhập lại mật khẩu:</label>
+        </td>
+        <td>
+          <input type="password" name="retype-password" value="">
+        </td>
+      </tr>
+      <!-- email -->
+      <tr>
+        <td>
+          <label for="email">Email:</label>
+        </td>
+        <td>
+          <input type="email" name="email" value="">
+        </td>
+      </tr>
+      <!-- phone-number -->
+      <tr>
+        <td>
+          <label for="phone-number">Điện Thoại:</label>
+        </td>
+        <td>
+          <input type="tel" name="phone-number" value="">
+        </td>
+      </tr>
+      <!-- address -->
+      <tr>
+        <td>
+          <label for="address">Địa chỉ:</label>
+        </td>
+        <td>
+          <input type="text" name="address" value="">
+        </td>
+      </tr>
+      <!-- submit -->
+      <tr>
+        <td>
+          <!-- Empty -->
+        </td>
+        <td>
+          <button type="button" name="button">Đăng ký</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+  <!-- result table -->
+  <table class="res">
+    <tr>
+      <td>Tên đăng nhập</td>
+      <td id="resName">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td id="resEmail"></td>
+    </tr>
+    <tr>
+      <td>Điện Thoại:</td>
+      <td id="resPhoneNum"></td>
+    </tr>
+    <tr>
+      <td>Địa chỉ:</td>
+      <td id="resAddress"></td>
+    </tr>
+  </table>
+
+  <!-- jq + js script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="bai1.js" charset="utf-8"></script>
+</body>
+
+</html>

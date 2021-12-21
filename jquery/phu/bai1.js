@@ -35,12 +35,13 @@ function run(button){
   "\n rePass_C: " +rePass_C+
   "\n email_C: " +email_C);
 
+  // set input value on the resTable
   setValue(name,email,phoneNumber,address);
 
 }
 
 function getValue(target,elm){
-  let value = target.find("input[name="+elm+"]").val();
+  let value = target.find(`input[name=${elm}]`).val();
   return value;
 }
 
@@ -63,7 +64,7 @@ function checkValue(username,pass,retypepass,email){
           console.log("email clear");
 
         }else{ alert("Email không được trống") } //---email
-      }else{ alert("Mật khẩu nhập lại phải giống mật khẩu ở trên") }//---re-pass
+      }else{ alert("Mật khẩu nhập lại phải giống mật khẩu ở trên") }//---retype-pass
     }else{ alert("Mật khẩu không được trống") } //---pass
   }else{ alert("Tên đăng nhập phải lớn hơn 4 ký tự") }//---username
 
@@ -82,5 +83,4 @@ function setValue(username,email,phone,address){
   pass_C = false;
   rePass_C = false;
   email_C = false;
-
 }

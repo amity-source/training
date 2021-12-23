@@ -16,5 +16,11 @@ namespace bai2.Controllers
             message.welcome = "Welcome from model";
             return View(message);
         }
+
+        public ActionResult images()
+        {
+            ViewBag.imagestring = "a Random Image";
+            return View();
+        }
     }
 }

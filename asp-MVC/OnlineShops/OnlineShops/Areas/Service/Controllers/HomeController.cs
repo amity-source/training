@@ -13,5 +13,9 @@ namespace OnlineShops.Areas.Service.Controllers
         {
             return View();
         }
+        public ActionResult Info()
+        {
+            return View();
+        }
     }
 }

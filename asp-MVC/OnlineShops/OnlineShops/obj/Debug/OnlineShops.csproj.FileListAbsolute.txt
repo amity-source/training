@@ -74,3 +74,13 @@ C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\obj\Debug\O
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\obj\Debug\OnlineShops.csproj.CopyComplete
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\obj\Debug\OnlineShops.dll
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\obj\Debug\OnlineShops.pdb
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model1.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\EntityFramework.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model1.pdb
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model1.dll.config
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\EntityFramework.xml
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\EntityFramework.SqlServer.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\EntityFramework.SqlServer.xml
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model2.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model2.pdb
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShops\OnlineShops\bin\Model2.dll.config

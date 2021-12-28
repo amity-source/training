@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OnlineShops"
+    "\\OnlineShop+Linq",
+    "\\OnlineShop+Linq\\Model"
   ],
-  "SelectedNode": "\\OnlineShops\\OnlineShops.sln",
+  "SelectedNode": "\\OnlineShop+Linq\\OnlineShop+Linq.sln",
   "PreviewInSolutionExplorer": false
 }

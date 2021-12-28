@@ -1,0 +1,12 @@
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\Model.dll.config
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\Model.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\Model.pdb
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\EntityFramework.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\EntityFramework.xml
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.pdb

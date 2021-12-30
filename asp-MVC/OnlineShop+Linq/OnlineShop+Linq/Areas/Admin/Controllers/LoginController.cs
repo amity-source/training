@@ -22,22 +22,33 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                var result = dao.Login(model.UserName, model.Password);
+                var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
 
-                if (result)
+                switch (result)
                 {
-                    var user = dao.GetByUserName(model.UserName);
-                    var userSession = new UserLogin();
-                    userSession.UserName = user.UserName;
-                    userSession.UserID = user.ID;
+                    case  1:
+                        var user = dao.GetByUserName(model.UserName);
+                        var userSession = new UserLogin();
+                        userSession.UserName = user.UserName;
+                        userSession.UserID = user.ID;
 
-                    Session.Add(CommonConstant.USER_SESSION, userSession);
-                    return RedirectToAction("Index", "Home");
+                        Session.Add(CommonConstant.USER_SESSION, userSession);
+                        return RedirectToAction("Index", "Home");
+
+                    case  0:
+                        ModelState.AddModelError("", "Account not found");
+                        break;
+                    case -1:
+                        ModelState.AddModelError("", "Account is locked");
+                        break;
+                    case -2:
+                        ModelState.AddModelError("", "Wrong password");
+                        break;
+                    default:
+                        ModelState.AddModelError("", "Login Failed.");
+                        break;
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Login Failed.");
-                }
+
             }
 
             return View("Index");

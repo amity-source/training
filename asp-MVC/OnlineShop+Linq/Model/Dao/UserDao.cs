@@ -23,19 +23,35 @@ namespace Model.Dao
             return db.Users.SingleOrDefault(u => u.UserName == userName);
         }
 
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            //get matching name + password By Linq
-            var result = db.Users.Count(u =>
-            u.UserName == userName && u.Password == passWord);
+            //get matching name By Linq
+            var result = db.Users.SingleOrDefault(u => u.UserName == userName);
 
-            if (result > 0)
+            if (result == null)
             {
-                return true;
+                //when no account found
+                return 0;
             }
             else
             {
-                return false;
+                if (result.Status == false)
+                {
+                    //when account.status is Inactive(bit = 0)
+                    return -1;
+                }
+                else
+                {
+                    if (result.Password == passWord)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        //when input password not match
+                        return -2;
+                    }
+                }
             }
         }
 

@@ -7,17 +7,23 @@ using System.Threading.Tasks;
 
 namespace Model2.Dao
 {
-    class UserDao
+    public class UserDao
     {
         public void Base() {}
 
-        OnlineShopDbContext2 db = null;
+        OnlineShopDbContexts db = null;
 
         public UserDao()
         {
-            db = new OnlineShopDbContext2();
+            db = new OnlineShopDbContexts();
         }
 
+        public User GetByUserName(string userName)
+        {
+            return db.Users.FirstOrDefault(u => userName == u.UserName);
+        }
+
+        //validation
         public bool Login(string userName, string passWord)
         {
             var result = db.Users.Count(u => 

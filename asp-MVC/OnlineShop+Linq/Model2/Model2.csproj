@@ -63,7 +63,7 @@
     <Compile Include="EF\Footer.cs" />
     <Compile Include="EF\Menu.cs" />
     <Compile Include="EF\Menutype.cs" />
-    <Compile Include="EF\OnlineShopDbContext2.cs" />
+    <Compile Include="EF\OnlineShopDbContexts.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\ProductCategory.cs" />
     <Compile Include="EF\Slide.cs" />
@@ -74,7 +74,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

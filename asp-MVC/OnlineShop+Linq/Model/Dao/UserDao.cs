@@ -18,7 +18,12 @@ namespace Model.Dao
             db = new OnlineShopDbContext();
         }
 
-        public bool Login(string userName,string passWord)
+        public User GetByUserName(string userName)
+        {
+            return db.Users.SingleOrDefault(u => u.UserName == userName);
+        }
+
+        public bool Login(string userName, string passWord)
         {
             //get matching name + password By Linq
             var result = db.Users.Count(u =>

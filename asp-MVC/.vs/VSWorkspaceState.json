@@ -1,13 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OnlineShop+Linq\\Model",
+    "\\bai-2",
+    "\\bai-2\\bai2",
+    "\\OnlineShop+Linq",
     "\\OnlineShops",
     "\\OnlineShops\\OnlineShops",
-    "\\OnlineShops\\OnlineShops\\App_Start",
-    "\\OnlineShops\\OnlineShops\\Areas",
     "\\OnlineShops\\OnlineShops\\Areas\\Admin"
   ],
-  "SelectedNode": "\\OnlineShops\\OnlineShops\\Areas\\Admin\\AdminAreaRegistration.cs",
+  "SelectedNode": "\\OnlineShop+Linq\\OnlineShop+Linq.sln",
   "PreviewInSolutionExplorer": false
 }

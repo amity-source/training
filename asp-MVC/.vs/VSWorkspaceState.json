@@ -1,13 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bai-2",
-    "\\bai-2\\bai2",
     "\\OnlineShop+Linq",
     "\\OnlineShops",
     "\\OnlineShops\\OnlineShops",
-    "\\OnlineShops\\OnlineShops\\Areas\\Admin"
+    "\\OnlineShops\\OnlineShops\\Areas",
+    "\\OnlineShops\\OnlineShops\\Areas\\Admin",
+    "\\OnlineShops\\OnlineShops\\Areas\\Admin\\Views",
+    "\\OnlineShops\\OnlineShops\\Areas\\Admin\\Views\\Home"
   ],
-  "SelectedNode": "\\OnlineShop+Linq\\OnlineShop+Linq.sln",
+  "SelectedNode": "\\OnlineShops\\OnlineShops\\Areas\\Admin\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

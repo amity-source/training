@@ -26,5 +26,10 @@ namespace OnlineShop_Linq.Common
             return stringBuilder.ToString();
 
         }
+
+        public static string ShorterMD5Hash(string password)
+        {
+            return string.Join("", MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(password)).Select(p => p.ToString("x2")));
+        }
     }
 }

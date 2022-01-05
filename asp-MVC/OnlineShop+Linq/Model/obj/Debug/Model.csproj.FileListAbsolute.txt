@@ -10,3 +10,7 @@ C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Mod
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.dll
 C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\obj\Debug\Model.pdb
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\PagedList.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\PagedList.xml
+C:\Users\Phu\Desktop\Webdev\training\asp-MVC\OnlineShop+Linq\Model\bin\Debug\PagedList.Mvc.xml

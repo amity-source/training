@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PagedList;
 
 namespace Model.Dao
 {
@@ -17,6 +18,11 @@ namespace Model.Dao
         {
             db = new OnlineShopDbContext();
         }
+
+        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        {
+            return db.Users.OrderBy(u => u.UserName).ToPagedList(page , pageSize);
+        }  
 
         public User GetByUserName(string userName)
         {

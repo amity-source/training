@@ -29,6 +29,11 @@ namespace Model.Dao
             return db.Users.SingleOrDefault(u => u.UserName == userName);
         }
 
+        public User ViewDetail(int id)
+        {
+            return db.Users.Find(id);
+        }
+
         public int Login(string userName, string passWord)
         {
             //get matching name By Linq
@@ -69,7 +74,33 @@ namespace Model.Dao
 
             return entity.ID;
         }
-        public void Update() { }
+
+
+        public bool Update(User entity)
+        {
+            try
+            {
+                var user = db.Users.Find(entity.ID);
+                user.UserName = entity.UserName;
+                user.Name = entity.Name;
+                if (!string.IsNullOrEmpty(entity.Password))
+                {
+                    user.Password = entity.Password;
+                }
+                user.Address = entity.Address;
+                user.Email = entity.Email;
+                user.ModifedBy = entity.ModifedBy;
+                user.ModifedDate = DateTime.Now;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
         public void Delete() { }
     }
 }

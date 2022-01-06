@@ -12,25 +12,22 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-        public ActionResult Index(int page = 1, int pageSize = 2)
+        public ActionResult Index(int page = 1, int pageSize = 10)
         {
             var dao = new UserDao();
-            var model = dao.ListAllPaging(page,pageSize);
-            
+            var model = dao.ListAllPaging(page, pageSize);
+
             return View(model);
         }
 
+        //create user
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        [HttpPost] 
+        [HttpPost]
         public ActionResult Create(User user)
         {
             if (ModelState.IsValid)
@@ -48,7 +45,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Add User Complete");
+                    ModelState.AddModelError("", "Add User Failed");
                 }
             }
             return View("Index");
@@ -56,6 +53,38 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new UserDao();
+
+                if (!string.IsNullOrEmpty(user.Password))
+                {
+                    var encryptedMD5Password = Encryptor.MD5Hash(user.Password);
+                    user.Password = encryptedMD5Password;
+                }
+
+                var result = dao.Update(user);
+                if (result)
+                {
+                    return RedirectToAction("Index", "User");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Update User Failed");
+                }
+            }
+            return View("Index");
+        }
 
     }
 }

@@ -19,10 +19,19 @@ namespace Model.Dao
             db = new OnlineShopDbContext();
         }
 
-        public IEnumerable<User> ListAllPaging(int page, int pageSize)
+        public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         {
-            return db.Users.OrderBy(u => u.UserName).ToPagedList(page , pageSize);
-        }  
+            IQueryable<User> model = db.Users;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(u => u.UserName.Contains(searchString) ||
+                u.Name.Contains(searchString));
+            }
+            return model.OrderByDescending(u => u.UserName).ToPagedList(page, pageSize);
+
+            //return db.Users.OrderBy(u => u.UserName).ToPagedList(page, pageSize);
+        }
 
         public User GetByUserName(string userName)
         {

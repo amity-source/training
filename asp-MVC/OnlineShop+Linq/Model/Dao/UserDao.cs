@@ -101,6 +101,20 @@ namespace Model.Dao
                 return false;
             }
         }
-        public void Delete() { }
+        public bool Delete(int ID)
+        {
+            try
+            {
+                var user = db.Users.Find(ID);
+                db.Users.Remove(user);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
     }
 }

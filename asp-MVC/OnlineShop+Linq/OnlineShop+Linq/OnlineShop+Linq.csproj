@@ -630,6 +630,8 @@
     <Content Include="Assets\admin\dist\css\timeline.css" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.js" />
     <Content Include="Assets\admin\js\flot-data.js" />
+    <Content Include="Assets\admin\js\jquery.validate.min.js" />
+    <Content Include="Assets\admin\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\admin\js\morris-data.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -953,6 +955,8 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

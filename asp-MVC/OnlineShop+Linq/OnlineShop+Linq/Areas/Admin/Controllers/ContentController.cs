@@ -22,8 +22,9 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             SetViewBag();
             return View();
         }
-
+        
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Content model)
         {
             if (ModelState.IsValid)
@@ -33,7 +34,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             SetViewBag();
             return View();
         }
-
+    
         [HttpGet]
         public ActionResult Edit(long id)
         {

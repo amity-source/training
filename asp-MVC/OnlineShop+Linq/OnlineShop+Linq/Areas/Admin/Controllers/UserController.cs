@@ -94,5 +94,16 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+
+            return Json( new
+            {
+                status = result
+            });
+        }
     }
 }

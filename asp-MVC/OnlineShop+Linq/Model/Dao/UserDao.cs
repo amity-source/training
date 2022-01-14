@@ -75,6 +75,16 @@ namespace Model.Dao
             }
         }
 
+        public bool ChangeStatus(long id)
+        {
+            User user = db.Users.Find(id);
+            //switch user status
+            user.Status = !user.Status;
+            db.SaveChanges();
+
+            return user.Status;
+        }
+
         //crud
         public long Insert(User entity)
         {

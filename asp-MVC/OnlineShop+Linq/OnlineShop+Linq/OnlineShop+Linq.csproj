@@ -635,6 +635,7 @@
     <Content Include="Assets\admin\dist\css\sb-admin-2.css" />
     <Content Include="Assets\admin\dist\css\timeline.css" />
     <Content Include="Assets\admin\dist\js\sb-admin-2.js" />
+    <Content Include="Assets\admin\js\controller\UserController.js" />
     <Content Include="Assets\admin\js\flot-data.js" />
     <Content Include="Assets\admin\js\jquery.validate.min.js" />
     <Content Include="Assets\admin\js\jquery.validate.unobtrusive.min.js" />

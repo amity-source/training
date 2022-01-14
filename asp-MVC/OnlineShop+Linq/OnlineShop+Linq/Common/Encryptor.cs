@@ -12,6 +12,7 @@ namespace OnlineShop_Linq.Common
         public static string MD5Hash(string password)
         {
             MD5 mD5 = new MD5CryptoServiceProvider();
+
             mD5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(password));
 
             byte[] result = mD5.Hash;

@@ -31,27 +31,37 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Create(User user)
         {
-            if (ModelState.IsValid)
+            bool result = InputValidation(user.UserName, user.Name, user.Password);
+            if (result)
             {
-                var dao = new UserDao();
-
-                //encrypt user password
-                var encryptedMD5Password = Encryptor.MD5Hash(user.Password);
-                user.Password = encryptedMD5Password;
-
-                long id = dao.Insert(user);
-                if (id > 0)
+                if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index", "User");
+                    var dao = new UserDao();
+
+                    //encrypt user password
+                    if (!string.IsNullOrEmpty(user.Password))
+                    {
+                        var encryptedMD5Password = Encryptor.MD5Hash(user.Password);
+                        user.Password = encryptedMD5Password;
+                    }
+
+                    long id = dao.Insert(user);
+                    if (id > 0)
+                    {
+                        SetAlert("Create User " + user.UserName + " Sucessful!", "success");
+                        return RedirectToAction("Index", "User");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Add User Failed");
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Add User Failed");
-                }
+                return View("Index");
             }
-            return View("Index");
-
-
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -77,6 +87,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
                 var result = dao.Update(user);
                 if (result)
                 {
+                    SetAlert("Update User " + user.UserName + " Sucessful!", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -100,7 +111,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
         {
             var result = new UserDao().ChangeStatus(id);
 
-            return Json( new
+            return Json(new
             {
                 status = result
             });

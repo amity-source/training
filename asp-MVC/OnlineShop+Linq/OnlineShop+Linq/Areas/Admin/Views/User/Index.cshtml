@@ -21,6 +21,7 @@
                 @using (Html.BeginForm("Index", "User", FormMethod.Get, new { @class = "form-group" }))
                 {
                     <div class="row">
+                        @*search bar*@
                         <div class="col-lg-4">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="searchString" value="@ViewBag.SearchString">
@@ -29,6 +30,11 @@
                                 </span>
                             </div><!-- /input-group -->
                         </div><!-- /.col-lg-6 -->
+
+                        @*add btn*@
+                        <a type="button" class="btn btn-primary" href="/Admin/User/Create">
+                            Add User
+                        </a>
                     </div><!-- /.row -->
                 }
                 <div class="table-responsive">

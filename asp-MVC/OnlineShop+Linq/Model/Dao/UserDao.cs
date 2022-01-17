@@ -28,7 +28,7 @@ namespace Model.Dao
                 model = model.Where(u => u.UserName.Contains(searchString) ||
                 u.Name.Contains(searchString));
             }
-            return model.OrderByDescending(u => u.UserName).ToPagedList(page, pageSize);
+            return model.OrderByDescending(u => u.CreatedDate).ToPagedList(page, pageSize);
 
             //return db.Users.OrderBy(u => u.UserName).ToPagedList(page, pageSize);
         }

@@ -2136,6 +2136,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
     <Content Include="Assets\client\font\Amble-Regular-webfont.ttf" />
     <Content Include="Assets\client\images\Thumbs.db" />
+    <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2163,6 +2164,9 @@
     </Content>
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\MainMenu.cshtml" />
+    <Content Include="Views\Shared\TopMenu.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

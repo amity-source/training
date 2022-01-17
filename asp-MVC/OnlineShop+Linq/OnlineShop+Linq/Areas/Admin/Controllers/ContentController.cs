@@ -13,12 +13,16 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
         // GET: Admin/Content
         public ActionResult Index()
         {
-            return View();
+            int page = 1, pageSize = 10;
+            var dao = new ContentDao();
+            var model = dao.ListAllPaging(page, pageSize);
+            return View(model);
         }
 
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.Status = true;
             SetViewBag();
             return View();
         }
@@ -29,7 +33,19 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                var dao = new ContentDao();
+
+                model.CreatedDate = DateTime.Now;
+                long id = dao.Insert(model);
+                if (id > 0)
+                {
+                    SetAlert("Create " + model.Name + " Sucessful!", "success");
+                    return RedirectToAction("Index", "Content");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Add Content Failed");
+                }
             }
             SetViewBag();
             return View();

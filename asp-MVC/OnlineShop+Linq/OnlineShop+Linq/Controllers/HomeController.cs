@@ -12,6 +12,10 @@ namespace OnlineShop_Linq.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.slides = new SlideDao().ListAll();
+            var product = new ProductDao();
+            ViewBag.NewProducts = product.ListNewProduct(4);
+            ViewBag.FeatureProducts = product.ListFeaturedProduct(4);
             return View();
         }
 
@@ -36,5 +40,6 @@ namespace OnlineShop_Linq.Controllers
             var model = new FooterDao().GetFooter();
             return PartialView(model);
         }
+
     }
 }

@@ -183,12 +183,16 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\SideController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlideController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Common\CommonConstant.cs" />
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1744,6 +1748,8 @@
     <Content Include="Assets\client\images\new-pic2.jpg" />
     <Content Include="Assets\client\images\new-pic3.jpg" />
     <Content Include="Assets\client\images\new-pic4.jpg" />
+    <Content Include="Assets\client\images\new-pic5.jpg" />
+    <Content Include="Assets\client\images\new-pic6.jpg" />
     <Content Include="Assets\client\images\newsimg1.jpg" />
     <Content Include="Assets\client\images\newsimg2.jpg" />
     <Content Include="Assets\client\images\newsimg3.jpg" />
@@ -2137,6 +2143,12 @@
     <Content Include="Assets\client\font\Amble-Regular-webfont.ttf" />
     <Content Include="Assets\client\images\Thumbs.db" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2167,6 +2179,7 @@
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\TopMenu.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\ProductCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2174,6 +2187,8 @@
     <Folder Include="Areas\Admin\Views\Side\" />
     <Folder Include="Assets\admin\lib\ckeditor\" />
     <Folder Include="Data\" />
+    <Folder Include="Views\Products\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

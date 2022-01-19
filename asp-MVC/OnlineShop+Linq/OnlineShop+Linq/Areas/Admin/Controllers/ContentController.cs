@@ -3,7 +3,7 @@ using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;   
+using System.Web;
 using System.Web.Mvc;
 
 namespace OnlineShop_Linq.Areas.Admin.Controllers
@@ -26,7 +26,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             SetViewBag();
             return View();
         }
-        
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Create(Content model)
@@ -50,7 +50,7 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             SetViewBag();
             return View();
         }
-    
+
         [HttpGet]
         public ActionResult Edit(long id)
         {
@@ -77,6 +77,6 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
         {
             var dao = new CategoryDao();
             ViewBag.CategoryID = new SelectList(dao.ListAllCategory(), "ID", "Name", selectedId);
-        } 
+        }
     }
 }

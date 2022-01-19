@@ -17,7 +17,7 @@ namespace Model.Dao
             db = new OnlineShopDbContext();
         }
 
-        public ProductCategory GetbyID(long id)
+        public ProductCategory ViewDetail(long id)
         {
             return db.ProductCategories.Find(id);
         }

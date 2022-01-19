@@ -16,6 +16,7 @@ namespace Model.Dao
             db = new OnlineShopDbContext();
         }
 
+
         public List<Category> ListAllCategory()
         {
             return db.Categories.Where(x => x.Status == true).ToList();

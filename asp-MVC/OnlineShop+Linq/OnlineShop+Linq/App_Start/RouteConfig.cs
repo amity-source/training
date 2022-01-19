@@ -14,11 +14,54 @@ namespace OnlineShop_Linq
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "ProductCategory",
+                url: "product/{metatitle}-{categoryId}",
+                defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "ProductDetail",
+                url: "detail/{metatitle}-{productId}",
+                defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "About",
+                url: "about",
+                defaults: new { controller = "About", action = "index", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Delivery",
+                url: "delivery",
+                defaults: new { controller = "Delivery", action = "index", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "News",
+                url: "news",
+                defaults: new { controller = "News", action = "index", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Contact",
+                url: "contact",
+                defaults: new { controller = "Contact", action = "index", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "OnlineShop_Linq.Controllers" }
             );
+
         }
     }
 }

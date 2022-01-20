@@ -32,7 +32,8 @@ namespace OnlineShop_Linq.Controllers
         public ActionResult Detail(long productId)
         {
             var product = new ProductDao().GetbyID(productId);
-
+            ViewBag.Category = new ProductCategoryDao().ViewDetail(product.CategoryID.Value);
+            ViewBag.RelatedProduct = new ProductDao().ListRelatedProductLimit(productId,4);
             return View(product);
         } 
 

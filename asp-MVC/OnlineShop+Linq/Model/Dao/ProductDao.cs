@@ -37,6 +37,20 @@ namespace Model.Dao
             return db.Products.Where(u => u.TopHot != null && u.TopHot > DateTime.Now).OrderByDescending(u => u.CreatedDate).Take(Top).ToList();
         }
 
+        public List<Product> ListRelatedProduct(long ProductId)
+        {
+            var product = db.Products.Find(ProductId);
+            return db.Products.Where(u => u.ID != ProductId &&
+                                     u.CategoryID == product.CategoryID).ToList();
+        }
+
+        public List<Product> ListRelatedProductLimit(long ProductId, int Top)
+        {
+            var product = db.Products.Find(ProductId);
+            return db.Products.Where(u => u.ID != ProductId && u.CategoryID == product.CategoryID)
+                                     .OrderByDescending(u => u.CreatedDate).Take(Top).ToList();
+        }
+
         public long Insert(Product entity)
         {
             db.Products.Add(entity);

@@ -532,6 +532,8 @@ body {
 }
 .back-links p {
 	font-size: 0.8125em;
+    /*fix word wrap in back-links*/
+    width: 110%;
 	color: #333;
 }
 .back-links p a {

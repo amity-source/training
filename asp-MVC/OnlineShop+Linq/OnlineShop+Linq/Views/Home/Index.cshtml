@@ -9,7 +9,9 @@
 @section slide{
     <div class="header_slide">
         <div class="header_bottom_left">
-            @{ Html.RenderAction("ProductCategory", "Product"); }
+            <div class="categories">
+                @{ Html.RenderAction("ProductCategory", "Product"); }
+            </div>
         </div>
         <div class="header_bottom_right">
             <div class="slider">
@@ -17,7 +19,7 @@
                     <div id="mover">
                         @foreach (var item in slides)
                         {
-                            <div  id="slide-1" class="slide">
+                            <div  id="slide-@item.DisplayOrder" class="slide">
                                 <div class="slider-img">
                                     <a href="@item.Link"><img src="@item.Image" alt="learn more" /></a>
                                 </div>
@@ -61,7 +63,7 @@
                     <div class="price-number">
                         <p>
                             <span class="rupees">
-                                @(item.Price.HasValue ? item.Price.Value.ToString("N0") + " Đ" : "Contact")
+                                @(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Contact")
                             </span>
                         </p>
                     </div>
@@ -93,7 +95,7 @@
                     <div class="price-number">
                         <p>
                             <span class="rupees">
-                                @(item.Price.HasValue ? item.Price.Value.ToString("N0") + " Đ" : "Contact")
+                                @(item.Price.HasValue ? item.Price.Value.ToString("N0") : "Contact")
                             </span>
                         </p>
                     </div>

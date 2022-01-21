@@ -9,11 +9,14 @@
 @section Header{
     Product Index
 }
+@section jsFooter{
+    <script src="/Assets/admin/js/controller/ProductController.js"></script>
+}
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                User List
+                Product List
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -27,19 +30,42 @@
                                 <th>Source</th>
                                 <th>Price</th>
                                 <th>IncludeVAT</th>
+                                <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr id="row_@item.ID">
-                                    <td>@item.Name</td>
-                                    <td>@item.Code</td>
-                                    <td>@item.CategoryID</td>
-                                    <td>@item.Image</td>
-                                    <td>@item.Price</td>
-                                    <td>@item.IncludeVAT</td>
-                                </tr>
+                            <tr id="row_@item.ID">
+                                <td>@item.Name</td>
+                                <td>@item.Code</td>
+                                <td>@item.CategoryID</td>
+                                <td>@item.Image</td>
+                                <td>@item.Price.Value.ToString("N0")</td>
+                                <td>
+                                    <a href="#" class="btn-active-vat" data-id="@item.ID">
+                                        @(item.IncludeVAT ? "Yes" : "No")
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn-active" data-id="@item.ID">
+                                        @(item.Status ? "ACTIVE" : "INACTIVE")
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/Admin/Product/Edit/@item.ID">Edit</a>
+                                    |
+                                    @Ajax.ActionLink("Delete", "Delete",
+                                     new { @id = item.ID },
+                                     new AjaxOptions
+                                     {
+                                         Confirm = "Are you sure you want to Delete " + item.Name + " ?",
+                                         OnComplete = "$('#row_" + @item.ID + "').remove()",
+                                         HttpMethod = "DELETE"
+                                     })
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>

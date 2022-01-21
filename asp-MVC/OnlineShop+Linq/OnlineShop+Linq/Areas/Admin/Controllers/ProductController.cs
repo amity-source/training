@@ -46,5 +46,63 @@ namespace OnlineShop_Linq.Areas.Admin.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var product = new ProductDao().GetbyID(id);
+            return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new ProductDao();
+
+                product.ModifedDate = DateTime.Now;
+                var result = dao.Update(product);
+                if (result)
+                {
+                    SetAlert("Update Product " + product.Name + " Sucessful!", "success");
+                    return RedirectToAction("Index", "Product");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Update Product Failed");
+                }
+            }
+            return View("Index");
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            new ProductDao().Delete(id);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new ProductDao().ChangeStatus(id);
+
+            return Json(new
+            {
+                status = result
+            });
+        }
+        [HttpPost]
+        public JsonResult ChangeVat(long id)
+        {
+            var result = new ProductDao().ChangeVAT(id);
+
+            return Json(new
+            {
+                IncludeVAT = result
+            });
+        }
     }
 }

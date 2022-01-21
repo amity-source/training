@@ -29,26 +29,66 @@ namespace Model.Dao
 
         public List<Product> ListNewProduct(int Top)
         {
-            return db.Products.OrderByDescending(u => u.CreatedDate).Take(Top).ToList();
+            return db.Products
+                .OrderByDescending(u => u.CreatedDate)
+                .Take(Top)
+                .ToList();
         }
 
+        /// <summary>
+        /// List product By CategoryId 
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <param name="totalRecord"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public List<Product> ListByCategoryId(long categoryId, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
+        {
+            totalRecord = db.Products
+                .Where(u => u.CategoryID == categoryId)
+                .Count();
+
+            var model = db.Products
+                .Where(u => u.CategoryID == categoryId) 
+                .OrderBy(u => u.CreatedDate)
+                .Skip((pageIndex - 1) * pageSize)       
+                .Take(pageSize)
+                .ToList();
+
+            return model;
+        }
+
+        /// <summary>
+        /// List featured Product
+        /// </summary>
+        /// <param name="Top"></param>
+        /// <returns></returns>
         public List<Product> ListFeaturedProduct(int Top)
         {
-            return db.Products.Where(u => u.TopHot != null && u.TopHot > DateTime.Now).OrderByDescending(u => u.CreatedDate).Take(Top).ToList();
+            return db.Products
+                .Where(u => u.TopHot != null && u.TopHot > DateTime.Now)
+                .OrderByDescending(u => u.CreatedDate)
+                .Take(Top)
+                .ToList();
         }
 
         public List<Product> ListRelatedProduct(long ProductId)
         {
             var product = db.Products.Find(ProductId);
-            return db.Products.Where(u => u.ID != ProductId &&
-                                     u.CategoryID == product.CategoryID).ToList();
+            return db.Products
+                .Where(u => u.ID != ProductId && u.CategoryID == product.CategoryID)
+                .ToList();
         }
 
         public List<Product> ListRelatedProductLimit(long ProductId, int Top)
         {
             var product = db.Products.Find(ProductId);
-            return db.Products.Where(u => u.ID != ProductId && u.CategoryID == product.CategoryID)
-                                     .OrderByDescending(u => u.CreatedDate).Take(Top).ToList();
+            return db.Products
+                .Where(u => u.ID != ProductId && u.CategoryID == product.CategoryID)
+                .OrderByDescending(u => u.CreatedDate)
+                .Take(Top)
+                .ToList();
         }
 
         public long Insert(Product entity)
@@ -58,5 +98,71 @@ namespace Model.Dao
 
             return entity.ID;
         }
+
+        public bool Update(Product entity)
+        {
+            try
+            {
+                var product = db.Products.Find(entity.ID);
+
+                product.Name = entity.Name;
+                product.Code = entity.Code;
+                product.MetaTitle = entity.MetaTitle;
+                product.Description = entity.Description;
+                product.Image = entity.Image;
+                product.MoreImages = entity.MoreImages;
+                product.Price = entity.Price;
+                product.PromotionPrice = entity.PromotionPrice;
+                product.IncludeVAT = entity.IncludeVAT;
+                product.Quantity = entity.Quantity;
+                product.CategoryID = entity.CategoryID;
+                product.Detail = entity.Detail;
+                product.Warranty = entity.Warranty;
+                product.Status = entity.Status;
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
+        public bool Delete(int ID)
+        {
+            try
+            {
+                var product = db.Products.Find(ID);
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+        }
+
+        public bool ChangeStatus(long id)
+        {
+            Product product = db.Products.Find(id);
+            //switch Product status
+            product.Status = !product.Status;
+            db.SaveChanges();
+
+            return product.Status;
+        }
+        public bool ChangeVAT(long id)
+        {
+            Product product = db.Products.Find(id);
+            //switch Product VAT
+            product.IncludeVAT = !product.IncludeVAT;
+            db.SaveChanges();
+
+            return product.IncludeVAT;
+        }
+
     }
 }

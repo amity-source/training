@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using OnlineShop_Linq.Models;
+using OnlineShop_Linq;
 
 namespace OnlineShop_Linq
 {

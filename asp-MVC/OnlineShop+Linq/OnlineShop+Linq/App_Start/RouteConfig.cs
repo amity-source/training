@@ -28,6 +28,13 @@ namespace OnlineShop_Linq
             );
 
             routes.MapRoute(
+                name: "Add To Cart",
+                url: "add-to-cart",
+                defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "About",
                 url: "about",
                 defaults: new { controller = "About", action = "index", id = UrlParameter.Optional },

@@ -22,6 +22,11 @@ namespace Model.Dao
             return db.Products.Find(id);
         }
 
+        public Product ViewDetail(long id)
+        {
+            return db.Products.Find(id);
+        }
+
         public IEnumerable<Product> ListAllPaging(int page, int pageSize)
         {
             return db.Products.OrderBy(u => u.CreatedDate).ToPagedList(page, pageSize);

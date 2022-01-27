@@ -1,4 +1,5 @@
 ﻿using Model.EF;
+using Model.ViewModel;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -48,20 +49,44 @@ namespace Model.Dao
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public List<Product> ListByCategoryId(long categoryId, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
+        public List<ProductViewModel> ListByCategoryId(long categoryId, ref int totalRecord, int pageIndex = 1, int pageSize = 2)
         {
             totalRecord = db.Products
                 .Where(u => u.CategoryID == categoryId)
                 .Count();
 
             var model = db.Products
-                .Where(u => u.CategoryID == categoryId) 
-                .OrderBy(u => u.CreatedDate)
-                .Skip((pageIndex - 1) * pageSize)       
-                .Take(pageSize)
-                .ToList();
+                .Where(u => u.CategoryID == categoryId)
+                .OrderByDescending(u => u.CreatedDate)
+                .Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize);
 
-            return model;
+            //join 2 tables then add content into productviewmodel
+            var models = (
+                from a in db.Products
+                join b in db.ProductCategories
+                on a.CategoryID equals b.ID
+                where a.CategoryID == categoryId
+                select new ProductViewModel()
+                {
+                    ID = a.ID,
+                    Name = a.Name,
+                    MetaTitle = a.MetaTitle,
+                    Price = a.Price,
+                    Image = a.Image,
+                    CateName = b.Name,
+                    CateMetaTitle = b.MetaTitle,
+                    CreatedDate = a.CreatedDate
+                })   
+                .OrderBy(u => u.CreatedDate)
+                .Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize);
+
+            //model.OrderBy(u => u.CreatedDate)
+            //     .Skip((pageIndex - 1) * pageSize)
+            //     .Take(pageSize);
+
+            return models.ToList();
         }
 
         /// <summary>
@@ -134,6 +159,7 @@ namespace Model.Dao
                 return false;
             }
         }
+
         public bool Delete(int ID)
         {
             try
@@ -159,6 +185,7 @@ namespace Model.Dao
 
             return product.Status;
         }
+
         public bool ChangeVAT(long id)
         {
             Product product = db.Products.Find(id);

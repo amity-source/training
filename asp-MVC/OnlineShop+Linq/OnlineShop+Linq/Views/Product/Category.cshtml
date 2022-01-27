@@ -1,4 +1,4 @@
-﻿@model List<Model.EF.Product>
+﻿@model List<Model.ViewModel.ProductViewModel>
 @{
     var category = (Model.EF.ProductCategory)ViewBag.Category;
     ViewBag.Title = category.Name;
@@ -24,6 +24,7 @@
             <div class="grid_1_of_4 images_1_of_4">
                 <a href="@detail"><img src="@item.Image" alt="@item.Name" /></a>
                 <h2>@item.Name</h2>
+                <span>@item.CateName</span>
                 <div class="price-details">
                     <div class="price-number">
                         <p>

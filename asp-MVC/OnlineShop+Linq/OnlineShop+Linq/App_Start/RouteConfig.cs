@@ -35,6 +35,33 @@ namespace OnlineShop_Linq
             );
 
             routes.MapRoute(
+                name: "Cart",
+                url: "cart",
+                defaults: new { controller = "Cart", action = "index", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Payment",
+                url: "checkout",
+                defaults: new { controller = "Cart", action = "Payment", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Payment Success",
+                url: "success",
+                defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Payment Error",
+                url: "order-error",
+                defaults: new { controller = "Cart", action = "OrderError", id = UrlParameter.Optional },
+                namespaces: new string[] { "OnlineShop_Linq.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "About",
                 url: "about",
                 defaults: new { controller = "About", action = "index", id = UrlParameter.Optional },

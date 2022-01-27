@@ -1,0 +1,34 @@
+﻿/*remove all underline*/
+a {
+   text-decoration: none !important;
+}
+.btn-theme {
+   background: #CD1F25;
+   color: #ffffff;
+}
+.cart-btn:hover, .btn-theme:hover {
+   box-shadow: inset 0 0 100px 100px rgba(50, 50, 50, 0.2);
+   color: #ffffff;
+}
+.no_color {
+   color: inherit;
+}
+hr.thick {
+    border-width: 2px;
+}
+#small{
+    width: 50px;
+    padding: 0px 5px;
+}
+#medium{
+    width: 100px;
+    padding: 0px 5px;
+}
+#large{
+    width: 200px;
+    padding: 0px 5px;
+}
+/*table cells in cart*/
+#cart-td>td {
+   vertical-align: middle;
+}

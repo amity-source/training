@@ -1,0 +1,22 @@
+﻿@model List<OnlineShop_Linq.Models.CartItem>
+<div class="cart">
+    <p>
+        Welcome to our Online Store! <span><a href="/Cart" class="no_color">Cart:</a></span>
+        <div id="dd" class="wrapper-dropdown-2">
+            @Model.Count() item(s) 
+            <ul class="dropdown">
+                @if (Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <li>@item.Product.Name</li>
+                    }
+                }
+                else
+                {
+                    <li>you have no items in your Shopping cart</li>
+                }
+            </ul>
+        </div>
+    </p>
+</div>

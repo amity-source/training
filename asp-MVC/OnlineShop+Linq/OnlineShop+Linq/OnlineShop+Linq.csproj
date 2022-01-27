@@ -1738,6 +1738,7 @@
     <Content Include="Assets\client\css\global.css" />
     <Content Include="Assets\client\css\slider.css" />
     <Content Include="Assets\client\css\style.css" />
+    <Content Include="Assets\client\css\test.css" />
     <Content Include="Assets\client\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\client\font\fontawesome-webfont.svg" />
     <Content Include="Assets\client\font\glyphicons-halflings-regular.svg" />
@@ -1794,6 +1795,7 @@
     <Content Include="Assets\client\images\value-rating.png" />
     <Content Include="Assets\client\images\wishlist.png" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
+    <Content Include="Assets\client\js\controller\cartController.js" />
     <Content Include="Assets\client\js\easing.js" />
     <Content Include="Assets\client\js\easyResponsiveTabs.js" />
     <Content Include="Assets\client\js\jquery-1.11.3.min.js" />
@@ -2249,6 +2251,10 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Delivery\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Shared\HeaderCart.cshtml" />
+    <Content Include="Views\Cart\Payment.cshtml" />
+    <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Cart\OrderError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

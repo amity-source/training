@@ -61,7 +61,7 @@ namespace Model.Dao
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize);
 
-            //join 2 tables then add content into productviewmodel
+            //join 2 tables then add content into ProductViewModel
             var models = (
                 from a in db.Products
                 join b in db.ProductCategories

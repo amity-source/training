@@ -1806,6 +1806,7 @@
     <Content Include="Assets\client\js\script.js" />
     <Content Include="Assets\client\js\slides.min.jquery.js" />
     <Content Include="Assets\client\js\startstop-slider.js" />
+    <Content Include="Assets\client\template\neworder.html" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Data\alt.png" />
     <Content Include="favicon.ico" />
@@ -2273,6 +2274,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Commons\Common.csproj">
+      <Project>{6C1D626F-2E09-4243-85BB-041339B13F33}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{407dd812-4417-4020-be8d-3205964c05a0}</Project>
       <Name>Model</Name>

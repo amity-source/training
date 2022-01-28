@@ -43,7 +43,7 @@
                     decimal sum = 0;
                     foreach (var item in Model)
                     {
-                        sum += item.Product.Price.GetValueOrDefault(0) * item.Quantity;
+                        sum += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
                     }
                     <hr class="thick">
                     <label>Total : @sum.ToString("N0")</label>

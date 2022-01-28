@@ -224,3 +224,5 @@ C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\obj\De
 C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\obj\Debug\OnlineShop+Linq.pdb
 C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\bin\CKFinder.dll
 C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\bin\CKFinder.pdb
+C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\bin\Commons.dll
+C:\Users\Phu\Desktop\web\training\asp-MVC\OnlineShop+Linq\OnlineShop+Linq\bin\Commons.pdb

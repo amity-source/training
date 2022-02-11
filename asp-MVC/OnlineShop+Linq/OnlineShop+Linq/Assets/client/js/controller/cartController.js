@@ -13,12 +13,15 @@
             var listProduct = $('.txtQuantity');
             var cartList = [];
             $.each(listProduct, function (i, item) {
-                cartList.push({
-                    Quantity: $(this).val(),
-                    Product: {
-                        ID: $(item).data('id')
-                    }
-                });
+                var quantity = $(this).val();
+                if (quantity > 0) {
+                    cartList.push({
+                        Quantity: quantity,
+                        Product: {
+                            ID: $(item).data('id')
+                        }
+                    });
+                }
             });
             $.ajax({
                 url: '/Cart/Update',
@@ -32,7 +35,6 @@
                 }
             })
         });
-
         $('#btnDeleteAll').off('click').on('click', function () {
             $.ajax({
                 url: '/Cart/DeleteAll',
@@ -58,6 +60,19 @@
                     }
                 }
             })
+        });
+        $('.minus-button').off('click').on('click', function (e) {
+            e.preventDefault();
+            var quantity = $('.txtQuantity');
+            quantity.val(parseInt(quantity.val()) - 1);
+            if (quantity.val() == 0) {
+                quantity.val(1);
+                $(this).toggleClass('')
+            }
+        });
+        $('.plus-button').off('click').on('click', function (e) {
+            e.preventDefault();
+            $('.txtQuantity').val(parseInt($('.txtQuantity').val()) + 1);
         });
     }
 }

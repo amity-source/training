@@ -1796,6 +1796,7 @@
     <Content Include="Assets\client\images\wishlist.png" />
     <Content Include="Assets\client\js\bootstrap.min.js" />
     <Content Include="Assets\client\js\controller\cartController.js" />
+    <Content Include="Assets\client\js\controller\contactController.js" />
     <Content Include="Assets\client\js\easing.js" />
     <Content Include="Assets\client\js\easyResponsiveTabs.js" />
     <Content Include="Assets\client\js\jquery-1.11.3.min.js" />
